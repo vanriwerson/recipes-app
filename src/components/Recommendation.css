@@ -1,0 +1,28 @@
+.recommendation-carousel {
+  display: flex;
+  overflow-x: scroll;
+  width: 360px;
+  color: white;
+}
+
+.recommendation-card {
+  background-color: aliceblue;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 8px;
+  text-align: center;
+  width: 200px;
+}
+
+.recommendation-card img {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  width: 120px;
+}
+
+.recommendation-card p {
+  background-color: #e74343;
+  border-radius: 8px;
+  margin: 0;
+  padding: 8px;
+}

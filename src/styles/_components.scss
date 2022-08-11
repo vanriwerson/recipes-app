@@ -1,0 +1,608 @@
+@use 'sass:color';
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
+  height: 100%;
+
+  .login-animation {
+    position: absolute;
+    top: 0;
+    margin-top: 80px;
+  }
+
+  form {
+    margin-top: 100px;
+    width: 80%;
+
+    div {
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      input {
+        margin-top: 10px;
+        width: calc(98% - 26px);
+        border: none;
+        height: 30px;
+        padding-left: 26px;
+        border-radius: 2px;
+      }
+  
+      input:focus {
+        outline: none;
+      }
+
+      span {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      width: 99%;
+      border: none;
+      height: 35px;
+      background-color: $secundary;
+      color: white;
+      border-radius: 2px;
+
+      &:disabled {
+        background-color: color.scale($secundary, $blackness: 30%);
+      }
+    }
+  }
+}
+
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: $secundary;
+    color: white;
+    font-size: 14px;
+
+    &:disabled {
+      background-color: color.scale($secundary, $blackness: 20%);
+    }
+  }
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $secundary;
+  color: white;
+  z-index: 2;
+
+  h1 {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 26px;
+  }
+
+  .buttons-header {
+    button {
+      border: none;
+      background-color: $secundary;
+      color: white;
+      font-size: 14px;
+      padding: 5px;
+
+      &:disabled {
+        background-color: color.scale($secundary, $blackness: 20%);
+      }
+    }
+  }
+
+}
+
+.searchbar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 119px;
+  background-color: $secundary;
+
+  input[type=radio] {
+    accent-color: $primary;
+  }
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    margin-top: 4px;
+
+    input[type=text] {
+      width: 80%;
+      border: none;
+      height: 25px;
+      border-radius: 2px;
+      padding-left: 5px;
+      margin-left: 5px;
+    }
+    input:focus {
+      outline: none;
+    }
+    button {
+      border: none;
+      background-color: $primary;
+      color: white;
+      font-size: 14px;
+      padding: 5px;
+      width: 20%;
+      margin-right: 5px;
+    }
+  }
+
+
+
+  .filter {
+    display: flex;
+    gap: 25px;
+    margin: 5px;
+  }
+}
+
+.category-filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: fixed;
+  width: 100%;
+  background-color: $secundary;
+  top: 45px;
+  z-index: 2;
+
+  button {
+    border: none;
+    background-color: $primary;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px;
+    flex-grow: 1;
+    border-radius: 50px;
+  }
+}
+
+
+.list-recipes-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 119px;
+  width: 100%;
+  background-color: $primary;
+  overflow: scroll;
+  height: calc(100vh - 159px);
+
+  a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    background-color: $secundary;
+    margin: 4px;
+    position: relative;
+
+    p {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      background-color: $secundary;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.recipe-details-container {
+  margin-bottom: 27px;
+
+  .wrapper {
+    background-color: $primary;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+
+    .category {
+      width: 100%;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 5px;
+      background-color: $secundary;
+    }
+
+    img {
+      width: 100%;
+      height: 180px;
+      border-bottom: 4px solid $secundary;
+      object-fit: cover;
+    }
+
+    div {
+      width: 90%;
+      margin: 0 auto;
+
+      ul {
+        padding-inline-start: 20px;
+      }
+
+      p{
+        text-align: justify;
+        margin: 10px 0;
+      }
+
+      iframe {
+        margin: 10px 0;
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+
+  }
+
+  .button-start {
+    border: none;
+    background-color: $secundary;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    flex-grow: 1;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+  }
+  
+
+  .share-and-favorite-button-container {
+    position: relative;
+    
+    button {
+      padding: 5px;
+      width: 50%;
+      border: none;
+      background-color: $secundary;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      position: absolute;
+      bottom: 2px;
+      text-align: center;
+      margin: 0 auto;
+      background-color: $primary;
+      color: white;
+      opacity: 90%;
+    }
+  }
+}
+
+.recipes-inprogress-container {
+  width: 100%;
+  color: white;
+  margin-bottom: 47px;
+
+  .category {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: $secundary;
+  }
+
+  h2 {
+    padding-left: 20px;
+  }
+
+  div {
+    width: 90%;
+    margin: 0 auto;
+
+    input[type="checkbox"] {
+      accent-color: $secundary;
+    }
+
+    ul {
+      list-style: none;
+      padding-inline-start: 0;
+    }
+
+    .done {
+      text-decoration: line-through;
+      color: rgb(37, 37, 37);
+    }
+
+    p{
+      text-align: justify;
+      margin: 10px 0;
+    }
+  }
+
+  .button-finish {
+    border: none;
+    background-color: $secundary;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    flex-grow: 1;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+
+    &:disabled {
+      background-color: color.scale($secundary, $blackness: 20%);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+    border-bottom: 4px solid $secundary;
+    object-fit: cover;
+  }
+
+  .share-and-favorite-button-container {
+    position: relative;
+    width: 100%;
+    
+    button {
+      padding: 5px;
+      width: 50%;
+      border: none;
+      background-color: $secundary;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      position: absolute;
+      bottom: 2px;
+      text-align: center;
+      margin: 0 auto;
+      background-color: $primary;
+      color: white;
+      opacity: 90%;
+    }
+  }
+}
+
+.done-recipes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: white;
+  background-color: $secundary;
+  margin-top: 30px;
+
+  .done-recipe-card {
+    width: 90%;
+    margin-bottom: 10px;
+    position: relative;
+
+    h4 {
+      font-size: 15px;
+      width: 100%;
+      background-color: $secundary;
+    }
+
+    .snackbar {
+      display: none;
+      width: 100%;
+      text-align: center;
+      background-color: $secundary;
+      position: absolute;
+      top: 150px;
+      font-size: 18px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      opacity: 90%;
+    }
+
+    
+    .container-done-infos {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $primary;
+      padding: 10px;
+
+      h5, p {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      div {
+        width: 70%;
+      }
+      
+      .btn-share-done {
+        width: 30%;
+      }
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      background-color: $primary;
+      color: white;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 180px;
+      }
+    }
+
+  }
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  flex-grow: 1;
+
+  p {
+    margin: 6px;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $secundary;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    width: 45%;
+    margin: 5px;
+    border-radius: 50px;
+  }
+
+
+  .profile-animation {
+    width: 50%;
+    margin-bottom: 40px;
+
+    svg {
+      border: 7px solid $secundary;
+      border-radius: 100%;
+    }
+  }
+}
+
+.favorite-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+  color: white;
+
+  .favorite-filters-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    background-color: $primary;
+
+    button {
+      border: none;
+      background-color: $secundary;
+      color: white;
+      font-size: 15px;
+      padding: 5px;
+      width: 45%;
+      margin: 5px;
+      border-radius: 50px;
+    }
+  }
+
+  .list-recipe-favorite-container {
+    width: 100%;
+    margin-top: 37px;
+
+    .not-found-recipe-favorite-container {
+      display: flex;
+      margin-top: 80px;
+      align-items: center;
+      flex-direction: column;
+
+      h2 {
+        font-size: 35px;
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      background-color: $secundary;
+      color: white;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 180px;
+      }
+    }
+
+    .share-and-favorite-buttons {
+      display: flex;
+      position: relative;
+    }
+
+    .snackbar {
+      display: none;
+      width: 100%;
+      text-align: center;
+      background-color: $primary;
+      position: absolute;
+      top: 300px;
+      font-size: 18px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      opacity: 80%;
+    }
+
+    .card-recipe-favorite {
+      margin-bottom: 10px;
+      
+      h5 {
+        font-size: 15px;
+        padding-left: 10px;
+      }
+    }
+
+  }
+
+}
